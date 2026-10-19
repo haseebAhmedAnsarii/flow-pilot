@@ -1,0 +1,56 @@
+/*
+ * Colour palette for FlowPilot.
+ * Values were extracted from the Figma file (Flow-Pilot, 1440 page and mobile menu).
+ * Tailwind v4 turns every --color-* token into utilities, e.g. text-ink, bg-surface, border-border.
+ * Use these tokens everywhere; do not hardcode hex values in components.
+ */
+@theme {
+  /* Base */
+  --color-white: #ffffff;
+
+  /* Text */
+  --color-ink: #101828; /* headings, strong text */
+  --color-body: #667085; /* paragraphs, nav links */
+  --color-subtle: #98a2b3; /* placeholders, captions */
+  --color-faint: #7a879b; /* secondary labels */
+  --color-neutral: #6b7280; /* misc grey text */
+
+  /* Brand */
+  --color-brand: #2f5bff; /* primary blue, gradient start */
+  --color-accent: #7b4dff; /* violet, gradient end */
+  --color-violet: #8a5cff; /* decorative icon accent */
+
+  /* Mobile menu (uses a slightly different indigo scale in the design) */
+  --color-menu-ink: #1e293b;
+  --color-menu-border: #e2e8f0;
+  --color-menu-brand: #5b47fb;
+  --color-menu-brand-end: #4f46e5;
+  --color-menu-glow: #c7d2fe;
+
+  /* Borders and dividers */
+  --color-border: #dce3f0; /* cards, inputs */
+  --color-border-soft: #eef1f5; /* header / section dividers */
+  --color-divider: #eef1f6;
+
+  /* Surfaces */
+  --color-surface: #f6f8fc; /* sidebars, hover backgrounds */
+  --color-surface-raised: #fbfcfe; /* stat cards */
+  --color-surface-tint: #f1f5ff;
+  --color-surface-pill: #eef3ff; /* badges */
+  --color-surface-track: #eef2ff; /* progress track */
+  --color-surface-icon: #eaf0ff; /* icon backgrounds */
+  --color-hero-from: #f2f6ff; /* hero gradient start */
+  --color-hero-to: #f6f1ff; /* hero gradient end */
+
+  /* Status / icon accents */
+  --color-success: #22b573;
+  --color-warning: #f7b500;
+  --color-orange: #ff9f43;
+  --color-error: #d92d20; /* not in Figma: form validation messages */
+
+  /* Shadows (colour parts come from the design) */
+  --shadow-cta: 0 0.0625rem 0.0625rem rgb(0 0 0 / 0.05);
+  --shadow-card: 0 0.625rem 2.25rem 0 rgb(29 42 87 / 0.1);
+  --shadow-soft: 0 0.625rem 1.125rem rgb(29 42 87 / 0.1);
+  --shadow-menu-cta: 0 0.0625rem 0.0625rem var(--color-menu-glow);
+}

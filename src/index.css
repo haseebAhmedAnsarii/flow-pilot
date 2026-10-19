@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "./styles/palette.css";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-menu: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-menu-in: menu-in 0.2s ease-out;
+  --animate-marquee: marquee 20s linear infinite;
+  --animate-fade-in: fade-in 0.25s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  select {
+    cursor: pointer;
+  }
+}
+
+/* Everything is sized in rem, so above the 1440px design width the root font size grows with the
+   viewport (1/90 of its width, which is exactly 16px at 1440px). Zooming the browser out (or a very
+   wide screen) then scales the whole page up instead of leaving a small column in the middle. At
+   or below 1440px the normal 100% (the user's own font-size setting) is used. */
+html {
+  font-size: max(100%, 1.1111vw);
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-menu-in,
+  .animate-fade-in {
+    animation: none;
+  }
+}
