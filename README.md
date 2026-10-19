@@ -40,7 +40,8 @@ npm install
 
 ```
 src/
-  components/   One file per component, with its test next to it (*.test.tsx)
+  components/   One folder per component: Name/Name.tsx, Name/Name.test.tsx and an index.ts that
+                re-exports it, so other files import it as ../Name
   data/         Typed content for each section (copy, plans, tabs, testimonials, ...)
   styles/
     palette.css Colour palette and shadows as Tailwind @theme tokens
